@@ -1,0 +1,14 @@
+3e760451e86a0890d1e5eb4f203889bf *DESCRIPTION
+42533512c8f4bc72f1331247c452dc30 *NAMESPACE
+6ac3281b74b818654e4830b2b04c8f78 *R/tseffects.R
+1bf18d9c216b8d95033f0bd2fe2906b2 *build/partial.rdb
+2c9f5a98a290d5c263eeeb7deae294d9 *data/approval.rda
+be2d9f969d159bf851e79ad65074f488 *data/toy.ts.interaction.data.rda
+e2a899249c8dc96212b5578d46c232e1 *inst/tseffects-manual.pdf
+6cf0c763d0cc4db28b4c7b96add40f3c *man/GDTE.adl.plot.Rd
+f96ceb7f82ec745d1c9f4a16963dd6e6 *man/GDTE.calculator.Rd
+714ac9d5ea85831e2c145c6c109289f1 *man/GDTE.gecm.plot.Rd
+1391d855a59f78542d8ebd4fa2a3b6bc *man/approval.Rd
+0f7fda5d403c3e8f4d8ca5ad43945720 *man/figures/logo.png
+6fea8216845d9ec78a465d554c306642 *man/pte.calculator.Rd
+3c5ec66530eaff183149023a16006df6 *man/toy.ts.interaction.data.Rd
