@@ -106,4 +106,5 @@ cavari.step <- GDTE.adl.plot(model = cavari.model,
 Soren Jordan, Garrett N. Vande Kamp, and Reshi Rajan
 }
 \keyword{ADL}
+\keyword{GDTE}
 \keyword{plot}
