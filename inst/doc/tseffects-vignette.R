@@ -183,7 +183,7 @@ interact.adl.plot(model = interact.model, x.vrbl = c("x" = 0, "l_1_x" = 1),
 					z.vrbl = c("z" = 0, "l_1_z" = 1),
 					x.z.vrbl = c("x_z" = 0, "z_l_1_x" = 1, "x_l_1_z" = 0, "l_1_x_l_1_z" = 1),
 					z.vals = -1:1,
-					effect.type = "impulse", plot.type = "lines", line.options = "z.lines",
+					effect.type = "discrete", plot.type = "lines", line.options = "z.lines",
 					s.limit = 20)
 
 ## -----------------------------------------------------------------------------
@@ -193,7 +193,7 @@ interact.adl.plot(model = interact.model, x.vrbl = c("x" = 0, "l_1_x" = 1),
 					x.z.vrbl = c("x_z" = 0, "z_l_1_x" = 1, "x_l_1_z" = 0, "l_1_x_l_1_z" = 1),
 					z.vals = c(-1, 1),
 					s.vals = c(0, 5),
-					effect.type = "impulse", plot.type = "lines", line.options = "s.lines",
+					effect.type = "discrete", plot.type = "lines", line.options = "s.lines",
 					s.limit = 20)
 
 ## -----------------------------------------------------------------------------
@@ -203,7 +203,7 @@ interact.adl.plot(model = interact.model, x.vrbl = c("x" = 0, "l_1_x" = 1),
 					x.z.vrbl = c("x_z" = 0, "z_l_1_x" = 1, "x_l_1_z" = 0, "l_1_x_l_1_z" = 1),
 					z.vals = c(-1, 1),
 					s.vals = c(0, 5),
-					effect.type = "step", plot.type = "lines", line.options = "s.lines",
+					effect.type = "discrete", shock.history = "step", plot.type = "lines", line.options = "s.lines",
 					s.limit = 20)
 
 ## -----------------------------------------------------------------------------
@@ -211,7 +211,7 @@ interact.adl.plot(model = interact.model, x.vrbl = c("x" = 0, "l_1_x" = 1),
 					y.vrbl = c("l_1_y" = 1), 
 					z.vrbl = c("z" = 0, "l_1_z" = 1),
 					x.z.vrbl = c("x_z" = 0, "z_l_1_x" = 1, "x_l_1_z" = 0, "l_1_x_l_1_z" = 1),
-					effect.type = "pulse", plot.type = "heatmap", heatmap.options = "all",
+					effect.type = "discrete", plot.type = "heatmap", heatmap.options = "all",
 					s.limit = 20)
 
 ## -----------------------------------------------------------------------------
@@ -219,7 +219,7 @@ interact.adl.plot(model = interact.model, x.vrbl = c("x" = 0, "l_1_x" = 1),
 					y.vrbl = c("l_1_y" = 1), 
 					z.vrbl = c("z" = 0, "l_1_z" = 1),
 					x.z.vrbl = c("x_z" = 0, "z_l_1_x" = 1, "x_l_1_z" = 0, "l_1_x_l_1_z" = 1),
-					effect.type = "pulse", plot.type = "heatmap", heatmap.options = "significant",
+					effect.type = "discrete", plot.type = "heatmap", heatmap.options = "significant",
 					s.limit = 20)
 
 ## -----------------------------------------------------------------------------
