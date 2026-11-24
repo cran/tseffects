@@ -1,0 +1,81 @@
+
+# tseffects: Dynamic Inferences from Time Series (with Interactions)
+
+<!-- badges: start -->
+[![Version](https://www.r-pkg.org/badges/version/tseffects?color=black)](https://cran.r-project.org/package=tseffects)
+[![CRAN checks](https://badges.cranchecks.info/summary/tseffects.svg)](https://cran.r-project.org/web/checks/check_results_tseffects.html)
+[![codecov](https://codecov.io/github/sorenjordan/tseffects/graph/badge.svg?token=SD7T7UUCCP)](https://app.codecov.io/github/sorenjordan/tseffects)
+[![Downloads](https://cranlogs.r-pkg.org/badges/grand-total/tseffects)](https://cran.r-project.org/package=tseffects)
+<!-- badges: end -->
+
+Autoregressive distributed lag (A[R]DL) models (and their reparameterized equivalent, the Generalized Error-Correction Model [GECM]) are workhorse dynamic linear models in uncovering dynamic inferences. ADL models are simple to estimate; this is what makes them attractive. But generating dynamic quantities of interest from them is considerably more intensive. We provide tools for recovering those inferences. These tools apply to traditional time-series quantities of interest and are built from the Impulse Response Function for the dynamic linear model. They also allow for a variety of shock histories to be applied to the independent variable (beyond just a one-time, one-unit increase) as well as the recovery of inferences in levels for shocks applied to (in)dependent variables in differences through the Generalized Dynamic Response Function. These tools are also available for the general conditional dynamic model advocated by Warner, Vande Kamp, and Jordan (2026 <doi:10.1017/psrm.2026.10087>).
+
+Two ultra-simple examples are shown below: see the vignette and manual for many, many more!
+
+## Installation
+
+```tseffects``` is available on CRAN. To install the stable version released to CRAN, install as normal:
+
+```
+install.packages("tseffects")
+library(tseffects)
+```
+
+## Usage: effects in levels
+
+Drawing inferences from ADL and GECM models is easy. From an ADL(1,1), just specify the independent and dependent variables, as well as the shock history desired.
+
+```
+# ADL(1,1)
+# Use the included toy data to run an ADL. No argument is made this is well specified; it is just expository
+model.toydata <- lm(y ~ l_1_y + x + l_1_x, data = toy.ts.interaction.data)
+
+GDRF.adl.plot(model = model.toydata, 
+x.vrbl = c("x" = 0, "l_1_x" = 1), 
+y.vrbl = c("l_1_y" = 1),
+d.x = 0,
+d.y = 0,
+shock.history = "pulse", 
+inferences.y = "levels",
+inferences.x = "levels",
+s.limit = 20)
+```
+
+## Usage: conditional relationships
+
+If we want to interpret the same style of effects from an interactive model, we just specify the interaction and its terms.
+
+```
+# ADL(1,1)
+# Use the toy data to run an ADL. No argument is made this is well specified; it is just expository
+model.toydata <- lm(y ~ l_1_y + x + l_1_x + z + l_1_z +
+x_z + l_1_x_z +
+x_l_1_z + l_1_x_l_1_z, data = toy.ts.interaction.data)
+
+interact.adl.plot(model = model.toydata, x.vrbl = c("x" = 0, "l_1_x" = 1), y.vrbl = c("l_1_y" = 1), z.vrbl = c("z" = 0, "l_1_z" = 1),
+x.z.vrbl = c("x_z" = 0, "l_1_x_z" = 1, "x_l_1_z" = 0, "l_1_x_l_1_z" = 1),
+z.vals = -2:2,
+effect.type = "impulse", plot.type = "lines", line.options = "z.lines",
+s.limit = 20)
+```
+
+
+<!-- ## Citation
+
+To cite ```tseffects``` in publications and working papers, please use:
+
+Mehlhaff, Isaac D. *Mass Polarization across Time and Space*. New York: Cambridge University Press (2025).
+
+For BibTeX users:
+
+```
+@book{Mehlhaffbook,
+  title = {Mass {{Polarization}} across {{Time}} and {{Space}}},
+  author = {Mehlhaff, Isaac D.},
+  year = {2025},
+  publisher = {{Cambridge University Press}},
+  location = {{New York}},
+  doi = {https://doi.org/10.1017/9781009350662}
+}
+```
+-->
